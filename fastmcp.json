@@ -1,18 +1,13 @@
 {
   "$schema": "https://gofastmcp.com/public/schemas/fastmcp.json/v1.json",
   "source": {
-    "type": "filesystem",
-    "path": "server.py",
-    "entrypoint": "mcp"
+    "type": "github",
+    "repository": "NimaZahediN/recon-ng-mcp-server",
+    "entrypoint": "recon_ng_mcp_server.mcp_server:mcp"
   },
   "environment": {
     "type": "uv",
-    "python": ">=3.11",
-    "dependencies": [
-      "fastmcp>=2.12.4",
-      "pyyaml>=6.0.3",
-      "requests>=2.32.5"
-    ]
+    "python": ">=3.11"
   },
   "deployment": {
     "transport": "stdio",

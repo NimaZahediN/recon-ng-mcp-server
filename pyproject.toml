@@ -15,8 +15,8 @@ dev = [
 ]
 
 [project.scripts]
-recon-mcp = "src.mcp_server:mcp"
-recon-mcp-run = "src.mcp_server:main"
+recon-mcp = "recon_ng_mcp_server.mcp_server:mcp"
+recon-mcp-run = "recon_ng_mcp_server.mcp_server:main"
 
 [dependency-groups]
 dev = [

@@ -6,7 +6,7 @@ This file provides a direct entry point that exposes the FastMCP server object
 following FastMCP best practices for MCP client connections.
 """
 
-from src.mcp_server import mcp
+from recon_ng_mcp_server.mcp_server import mcp
 
 # Export the server for MCP client access
 __all__ = ['mcp']
