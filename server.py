@@ -11,5 +11,9 @@ from recon_ng_mcp_server.mcp_server import mcp
 # Export the server for MCP client access
 __all__ = ['mcp']
 
-if __name__ == "__main__":
+def main():
+    """Entry point for command line usage."""
     mcp.run()
+
+if __name__ == "__main__":
+    main()
