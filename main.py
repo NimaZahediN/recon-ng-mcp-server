@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
 """
 Main entry point for the Recon-ng MCP Server.
+
+This follows the FastMCP pattern from the official MCP Python SDK.
+Run with: python main.py
 """
 
-import sys
-import os
-
-# Add the current directory to the Python path
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-
-from recon_ng_mcp_server.mcp_server import main
+from recon_ng_mcp_server.mcp_server import mcp
 
 if __name__ == "__main__":
-    main()
+    # Run the FastMCP server directly as shown in SDK examples
+    mcp.run()

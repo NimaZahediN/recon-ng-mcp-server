@@ -20,7 +20,7 @@ dev = [
 ]
 
 [project.scripts]
-recon-mcp = "recon_ng_mcp_server.server:main"
+recon-mcp = "recon_ng_mcp_server.mcp_server:main"
 recon-mcp-run = "recon_ng_mcp_server.mcp_server:main"
 
 [dependency-groups]
