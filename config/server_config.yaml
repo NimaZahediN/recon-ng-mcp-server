@@ -1,0 +1,53 @@
+# Server configuration for Recon-ng MCP Server
+
+# Server settings
+server:
+  name: "Recon-ng OSINT Server"
+  version: "1.0.0"
+  description: "Model Context Protocol server for recon-ng OSINT framework"
+  host: "localhost"
+  port: 8000
+
+# Logging configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/recon_mcp_server.log"
+  max_size_mb: 10
+  backup_count: 5
+
+# Recon-ng integration
+recon_ng:
+  # Path to recon-ng installation (relative to project root)
+  installation_path: "../recon-ng"
+
+  # Default workspace
+  default_workspace: "default"
+
+  # Stealth mode settings (disable analytics, version checks, etc.)
+  stealth_mode: true
+
+  # Module loading settings
+  load_modules_on_startup: true
+  validate_modules_on_load: true
+
+# MCP-specific settings
+mcp:
+  # Maximum number of concurrent operations
+  max_concurrent_operations: 5
+
+  # Request timeout in seconds
+  request_timeout: 30
+
+  # Enable/disable specific capabilities
+  capabilities:
+    tools: true
+    resources: true
+    prompts: false
+    logging: true
+
+# Development settings
+development:
+  debug_mode: false
+  mock_recon_ng: false  # Set to true to run without actual recon-ng
+  enable_test_endpoints: false

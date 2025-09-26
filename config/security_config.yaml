@@ -1,0 +1,77 @@
+# Security configuration for Recon-ng MCP Server
+# This file defines what modules and operations are allowed for defensive security use
+
+# Explicitly approved modules for OSINT operations
+approved_modules:
+  # Domain reconnaissance
+  - "recon/domains-hosts/bing_domain_web"
+  - "recon/domains-hosts/google_site_web"
+  - "recon/domains-hosts/netcraft"
+  - "recon/domains-hosts/shodan_hostname"
+  - "recon/domains-hosts/ssl_san"
+  - "recon/domains-hosts/threatcrowd"
+
+  # Contact information gathering
+  - "recon/domains-contacts/whois_pocs"
+  - "recon/contacts-profiles/fullcontact"
+
+  # Social media reconnaissance
+  - "recon/profiles-profiles/twitter"
+
+  # Reporting modules
+  - "reporting/html"
+  - "reporting/json"
+  - "reporting/xml"
+  - "reporting/csv"
+
+  # Import/Export modules
+  - "import/csv_file"
+  - "import/list"
+  - "export/csv"
+
+# Allowed module categories for defensive security
+allowed_categories:
+  - "recon"
+  - "discovery"
+  - "reporting"
+  - "import"
+  - "export"
+
+# Blocked patterns (case-insensitive regex patterns)
+blocked_patterns:
+  - "\\bbrute\\b"
+  - "\\bcrack\\b"
+  - "\\bexploit\\b"
+  - "\\battack\\b"
+  - "\\bpassword\\b"
+  - "\\bhash\\b"
+  - "\\bcredential\\b"
+  - "\\bpwn\\b"
+  - "\\bshell\\b"
+  - "\\bbackdoor\\b"
+  - "\\btrojan\\b"
+  - "\\bmalware\\b"
+  - "\\bvirus\\b"
+  - "\\binject\\b"
+  - "\\bpayload\\b"
+
+# Security settings
+security_settings:
+  max_option_length: 1000
+  max_workspace_name_length: 50
+  enable_module_validation: true
+  enable_option_validation: true
+  log_security_events: true
+
+# Workspace settings
+workspace_settings:
+  default_workspace: "default"
+  max_workspaces: 10
+  auto_create_missing: false
+
+# Rate limiting (requests per minute)
+rate_limits:
+  list_modules: 60
+  run_module: 30
+  get_module_info: 120
+  workspace_operations: 30
